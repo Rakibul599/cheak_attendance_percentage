@@ -13,16 +13,16 @@ if(0<n and total_rows>=n):
     res={}
 
     for i in range(1,n):
-        total_abs=0
+        total_pr=0
         name=studentinfo.iloc[i, 2]
         id=studentinfo.iloc[i, 1]
         for j in range(column_length):
             value = studentinfo.iloc[i, j]
             # print(value,i,j)
             if not pd.isna(value):
-                if value=="A":
-                    total_abs=total_abs+1
-        total_percentage=(total_abs/20)*100
+                if value=="P":
+                    total_pr=total_pr+1
+        total_percentage=(total_pr/20)*100
         mark=0
         if(total_percentage>=70):
             mark=5
@@ -31,7 +31,10 @@ if(0<n and total_rows>=n):
         elif(total_percentage>=45):
             mark=3
         elif(total_percentage>=30):
-            mark=2    
+            mark=2 
+        else:
+            mark=2
+
 
     
         res[i] = {
